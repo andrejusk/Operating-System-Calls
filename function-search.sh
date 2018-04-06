@@ -14,8 +14,16 @@ path=$1;
 # Recursively search for all TypeScript files
 files=$(find $path | grep ".*\.ts$")
 
-# Cat each file and search for function definitions
+# For each file
 while read -r line; do
-    printf "\n$line\n";
-    cat "$line" | grep "(" | grep --color -n "function"
+    # Find number of function declarations
+    length=$(cat "$line" | grep "(" | grep --color -n "function" | wc -l)
+    # If function declarations exist
+    if [ $length -gt 0 ]
+        then
+        # Print path
+        printf "\n$line\n";
+        # Print function definitions
+        cat "$line" | grep "(" | grep --color -n "function" 
+    fi
 done <<< $files
