@@ -16,5 +16,6 @@ files=$(find $path | grep ".*\.ts$")
 
 # Cat each file and search for function definitions
 while read -r line; do
+    printf "\n$line\n";
     cat "$line" | grep "(" | grep --color -n "function"
 done <<< $files
