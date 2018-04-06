@@ -19,7 +19,7 @@ int main(int argc, char *argv[]) {
     int number;
     while (1) {
         /* Get argument */
-        printf("Enter arguemnt (-1 to exit):\n");
+        printf("Enter argument (-1 to exit):\n");
         scanf("%d", &number);
         /* Exit condition */
         if (number < 0) {
