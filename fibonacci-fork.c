@@ -36,7 +36,7 @@ int main(int argc, char *argv[]) {
         if (pid == 0) {
             /* Calculate fibonacci */
             unsigned long fibonacci = calculateFibonacci(number);
-            printf("Child process returned: %lu\n", fibonacci);
+            printf("Child process returned: f(%d) = %lu\n", number, fibonacci);
             return 0;
         }
 
