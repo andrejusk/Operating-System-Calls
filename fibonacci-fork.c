@@ -40,7 +40,7 @@ int main(int argc, char *argv[]) {
         /* Parent process */ 
         else if (pid > 0) {
             /* Continue serving */
-            printf("Parent process: ");
+            printf("Continuing parent process... ");
         }
 
         /* Failed to create */
@@ -48,7 +48,6 @@ int main(int argc, char *argv[]) {
             printf("Failed to create child process.\n");
             return 1;
         }
-
 
     }
     
