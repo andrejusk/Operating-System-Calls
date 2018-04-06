@@ -2,9 +2,12 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-int calculateFibonacci(int number) {
+unsigned long calculateFibonacci(int number) {
     /* Base case */
-    if (number <= 2) {
+    if (number < 1) {
+        return 0;
+    }
+    else if (number < 2) {
         return 1;
     }
     /* Recurse */ 
@@ -32,8 +35,8 @@ int main(int argc, char *argv[]) {
         /* Child process */
         if (pid == 0) {
             /* Calculate fibonacci */
-            int fibonacci = calculateFibonacci(number);
-            printf("Child process returned: %d\n", fibonacci);
+            unsigned long fibonacci = calculateFibonacci(number);
+            printf("Child process returned: %lu\n", fibonacci);
             return 0;
         }
 
