@@ -29,12 +29,12 @@ int main(int argc, char *argv[]) {
         /* Child process */
         if (pid == 0) {
             unsigned long fibonacci = calculateFibonacci(number);
-            printf("Child process returned: f(%d) = %lu\n", number, fibonacci);
+            printf("Child returned: f(%d) = %lu\n", number, fibonacci);
             return 0;
         }
         /* Parent process */ 
         else if (pid > 0) {
-            printf("Continuing parent process... ");
+            printf("Continuing parent... ");
         }
         /* Failed to create */
         else if (pid < 0) {
