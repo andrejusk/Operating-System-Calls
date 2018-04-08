@@ -5,5 +5,5 @@
 
 #define PATH "/tmp/login-async"
 
-void send(char *message, int size);
-void receive(char *buffer, int size);
+void ipcSend(char *message, int size);
+void ipcReceive(char *buffer, int size);

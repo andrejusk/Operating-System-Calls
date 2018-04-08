@@ -1,4 +1,6 @@
-void send(char *message, int size) {
+#include "ipc.h"
+
+void ipcSend(char *message, int size) {
     /* Open pipe */
     mkfifo(PATH, 0666);
 
@@ -11,10 +13,9 @@ void send(char *message, int size) {
     unlink(PATH);
 }
 
-void receive(char *buffer, int size) {
+void ipcReceive(char *buffer, int size) {
     /* Read pipe */
     int file = open(PATH, O_RDONLY);
     read(file, buffer, 100);
-    printf("received: %s\n", buffer);
     close(file);
 }
