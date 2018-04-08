@@ -9,7 +9,6 @@ int main() {
 
     printf("Detected login-system, verifying...\n");
     char buffer[sizeof(HEARTBEAT)];
-
     do {
         ipcReceive(buffer, sizeof(HEARTBEAT));
     } while (buffer[0] != HEARTBEAT[0]);

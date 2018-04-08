@@ -5,9 +5,9 @@
 
 int main() {
     printf("Starting login-system, waiting for login-handler...\n");
-    char buffer[SIZE];
+    char buffer[sizeof(HEARTBEAT)];
     do {
-        ipcReceive(buffer, SIZE);
+        ipcReceive(buffer, sizeof(HEARTBEAT));
     } while (buffer[0] != HEARTBEAT[0]);
 
     printf("Detected login-handler, verifying...\n");
