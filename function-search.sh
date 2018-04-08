@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # If directory not passed
 if [ -z "$1" ] 
     then
